@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Cheese!</title>
+</head>
+<body>
+    <h1>Say Cheese!</h1>
+    <img src="data:image/jpeg;base64,{{ img_data }}" alt="Webcam Feed">
+    
+    {% if smile_status == "big_smile" %}
+        <p>Great smile! Keep it up!</p>
+    {% elif smile_status == "small_smile" %}
+        <p>Try smiling a bit more for a better stress relief!</p>
+    {% elif smile_status == "no_smile" %}
+        <p>Don't forget to smile! It's good for stress relief.</p>
+    {% endif %}
+</body>
+</html>

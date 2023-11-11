@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile Detection Result</title>
+</head>
+<body>
+    <h1>Smile Detection Result</h1>
+    {% if smile_detected %}
+        <p>Smile detected! 😊</p>
+    {% else %}
+        <p>No smile detected. 😐</p>
+    {% endif %}
+    <img src="data:image/jpeg;base64,{{ img_data }}" alt="Webcam Feed">
+</body>
+</html>
