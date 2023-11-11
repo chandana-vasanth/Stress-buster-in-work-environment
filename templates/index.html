@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Relief Chatbot</title>
+</head>
+<body>
+    <h1>Stress Relief Chatbot</h1>
+    
+    <div id="chat-container">
+        <div id="chat"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userMessage = document.getElementById('user-input').value;
+            document.getElementById('user-input').value = '';
+
+            // Append user message to chat container
+            var chatContainer = document.getElementById('chat');
+            chatContainer.innerHTML += '<p>User: ' + userMessage + '</p>';
+
+            // Send user message to the server
+            fetch('/get_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'user_message=' + userMessage,
+            })
+            .then(response => response.json())
+            .then(data => {
+                var botResponse = data.bot_response;
+                // Append bot response to chat container
+                chatContainer.innerHTML += '<p>Bot: ' + botResponse + '</p>';
+            });
+        }
+    </script>
+</body>
+</html>
