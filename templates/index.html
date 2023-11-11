@@ -2,42 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stress Relief Chatbot</title>
+    <title>Chatbot</title>
 </head>
 <body>
-    <h1>Stress Relief Chatbot</h1>
-    
-    <div id="chat-container">
-        <div id="chat"></div>
-        <input type="text" id="user-input" placeholder="Type your message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
+    {% if response %}
+        <p>{{ response }}</p>
+    {% endif %}
 
-    <script>
-        function sendMessage() {
-            var userMessage = document.getElementById('user-input').value;
-            document.getElementById('user-input').value = '';
-
-            // Append user message to chat container
-            var chatContainer = document.getElementById('chat');
-            chatContainer.innerHTML += '<p>User: ' + userMessage + '</p>';
-
-            // Send user message to the server
-            fetch('/get_response', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'user_message=' + userMessage,
-            })
-            .then(response => response.json())
-            .then(data => {
-                var botResponse = data.bot_response;
-                // Append bot response to chat container
-                chatContainer.innerHTML += '<p>Bot: ' + botResponse + '</p>';
-            });
-        }
-    </script>
+    {% if question %}
+        <h1>{{ question['text'] }}</h1>
+        <form action="/" method="post">
+            <label for="answer">Options:</label>
+            <select name="answer" id="answer">
+                {% for option in question['options'] %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>Thank you for answering the questions!</p>
+    {% endif %}
 </body>
 </html>
