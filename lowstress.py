@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 import cv2
 from io import BytesIO
 import base64
@@ -59,9 +59,18 @@ def guide_pet():
     return "Guide your virtual pet for a moment of relaxation."
 
 @app.route('/oneminutebreak')
-def one_minute_break():
-    return "Take a 1-minute break. Breathe deeply and relax."
+def one_minute_break_page():
+    return render_template('oneminutebreak.html')
 
+@app.route('/handle_one_minute_break', methods=['POST'])
+def handle_one_minute_break():
+    activity = request.form.get('activity')
+
+    if activity == 'meditation':
+        return render_template('meditation.html')
+
+    else:
+        return "Invalid activity choice."
 
 if __name__ == '__main__':
     app.run(debug=True)
