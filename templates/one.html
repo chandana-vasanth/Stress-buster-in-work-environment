@@ -1,0 +1,36 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pygame Spinner</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        canvas {
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Placeholder for the spinner -->
+    <canvas id="spinnerCanvas" width="800" height="600"></canvas>
+
+    <!-- Include necessary scripts -->
+    <script src="{{ url_for('static', filename='socket.io.js') }}"></script>
+    <script src="{{ url_for('static', filename='spinner.js') }}"></script>
+
+    <!-- Include any additional styles or scripts here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Include any other scripts your application may need -->
+</body>
+</html>
