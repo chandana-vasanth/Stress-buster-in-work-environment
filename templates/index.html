@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    {% if response %}
+        <p>{{ response }}</p>
+    {% endif %}
+
+    {% if question %}
+        <h1>{{ question['text'] }}</h1>
+        <form action="/" method="post">
+            <label for="answer">Options:</label>
+            <select name="answer" id="answer">
+                {% for option in question['options'] %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>Thank you for answering the questions!</p>
+    {% endif %}
+</body>
+</html>
