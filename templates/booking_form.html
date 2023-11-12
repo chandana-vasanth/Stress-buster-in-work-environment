@@ -6,8 +6,8 @@
     <title>Booking Form</title>
 </head>
 <body>
-    <h1>Book {{ assistant['name'] }}</h1>
-    <form method="post">
+    <h1>Schedule an appointment</h1>
+    <form method="post" action="/process-form">
         <label for="name">Your Name:</label>
         <input type="text" name="name" required><br>
 
@@ -16,6 +16,9 @@
 
         <label for="email">Your Email:</label>
         <input type="email" name="email" required><br>
+
+        <label for="pemail">Practicioner's Email:</label>
+        <input type="email" name="pemail" required><br>
 
         <label for="date">Preferred Date:</label>
         <input type="date" name="date" required><br>

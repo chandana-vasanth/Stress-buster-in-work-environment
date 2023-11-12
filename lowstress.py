@@ -54,9 +54,6 @@ def say_cheese():
 def low_stress_page():
     return render_template('lowstress.html')
 
-@app.route('/guidepet')
-def guide_pet():
-    return "Guide your virtual pet for a moment of relaxation."
 
 @app.route('/oneminutebreak')
 def one_minute_break_page():
