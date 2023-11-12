@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stress Assessment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .header {
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 20px;
+        font-family: "Poppins", sans-serif;
+        color: purple;
+      }
+
+      .avatar {
+        position: absolute;
+        top: -280px;
+        right: -150px;
+        width: 250px; /* Adjust the size as needed */
+        height: 250px;
+      }
+
+      .slidecontainer {
+        width: 50%; /* Adjusted width for better visibility */
+        position: relative; /* Add relative positioning */
+      }
+
+      /* The slider itself */
+      .slider {
+        -webkit-appearance: none; /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 15px; /* Specified height */
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+        transition: opacity 0.2s;
+        border-radius: 15px;
+        position: absolute;
+      }
+
+      /* Mouse-over effects */
+      .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+        border-radius: 5px;
+      }
+
+      /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 30px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: purple; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+        border-radius: 10px;
+      }
+
+      .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04aa6d; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+      }
+
+      /* Define colors for different stress levels */
+      .less-stress,
+      .medium-stress,
+      .high-stress {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 30px;
+        text-align: center;
+        margin: 0;
+      }
+
+      .less-stress {
+        color: green;
+      }
+
+      .medium-stress {
+        color: orange;
+      }
+
+      .high-stress {
+        color: red;
+      }
+
+      /* Style for the button */
+      .redirect-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        left: 40%;
+        top: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">How stressed are you?</div>
+    <div class="slidecontainer">
+      <img src="assets/images/confuse.jpg" alt="Avatar" class="avatar" />
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="myRange"
+      />
+      <p>
+        <span id="demo" class="medium-stress"></span>
+        <span id="stressLevel" class="medium-stress"></span>
+      </p>
+      <button class="redirect-button" onclick="redirectBasedOnStress()">
+        Let's burst it out
+      </button>
+    </div>
+    <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      var stressLevelOutput = document.getElementById("stressLevel");
+
+      // Display the default slider value
+      // updateStressLevel(slider.value); // Display the default stress level
+
+      // Update the current slider value (each time you drag the slider handle)
+      slider.oninput = function () {
+        // output.innerHTML = this.value;
+        updateStressLevel(this.value);
+      };
+
+      // Function to update stress level based on slider value
+      function updateStressLevel(value) {
+        if (value < 30) {
+          stressLevelOutput.innerHTML = "Chillaxing in Low Stress Mode";
+          stressLevelOutput.className = "less-stress";
+        } else if (value >= 30 && value <= 60) {
+          stressLevelOutput.innerHTML = "Navigating the Mid-Stress Highway";
+          stressLevelOutput.className = "medium-stress";
+        } else {
+          stressLevelOutput.innerHTML =
+            "Warning: Stress Levels in the Red Zone";
+          stressLevelOutput.className = "high-stress";
+        }
+      }
+
+      // Function to redirect to a specific page based on stress level
+      function redirectBasedOnStress() {
+        var stressValue = parseInt(slider.value);
+        if (stressValue < 30) {
+          window.location.href = "low.html";
+        } else if (stressValue <= 60) {
+          window.location.href = "medium.html";
+        } else {
+          window.location.href = "high.html";
+        }
+      }
+    </script>
+  </body>
+</html>
