@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Suggestions</title>
+</head>
+<body>
+    <h1>Movie Suggestions</h1>
+    <ul>
+        {% for movie in movies %}
+
+            <li>
+                <img src="{{ movie.poster }}" alt="{{ movie.title }} Poster" style="max-height: 150px; max-width: 100%;">
+                <br>
+                <strong>{{ movie.title }}</strong>: <a href="{{ movie.link }}" target="_blank">Watch Here</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
