@@ -171,7 +171,7 @@ def spinner():
 
 @app.route('/meditate')
 def meditate():
-    return render_template('movie.html')
+    return render_template('2minmeditate.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

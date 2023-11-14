@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgba(98, 6, 168, 255);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+            margin-top: 30px;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(98, 6, 168, 255);
+            color: #fff;
+        }
+
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-volume-slider {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <h1>Meditation</h1>
+    <p>Close your eyes and focus on your breath for a minute.</p>
+
+    <!-- Add background music -->
+    <audio controls autoplay>
+        <source src="{{ url_for('static', filename='relax.mp3') }}" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+</body>
+</html>
