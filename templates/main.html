@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>CareEttan</title>
-    <link
-      rel="stylesheet"
-      href="assets/vendors/fontawesome-free/css/all.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/vendors/fontawesome-free/css/all.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+
+   
   </head>
 
   <body>
     <header class="foi-header landing-header">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light foi-navbar">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="main.html">
             <!-- <img src="assets/images/logo.svg" alt="FOI" /> -->
           </a>
           <button
@@ -33,7 +32,7 @@
           <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html"
+                <a class="nav-link" href="main.html"
                   >Home <span class="sr-only">(current)</span></a
                 >
               </li>
@@ -93,8 +92,8 @@
                 Offering personalized solutions for a harmonious
                 mind-body balance. 
               </p> 
-              <a href="stress.html">
-              <button class="btn btn-primary mb-4">Start Assessment</button>
+              <a href="{{ url_for('start') }}">
+              <button class="btn btn-primary mb-4">Let's get started!</button>
             </a>
               <div class="my-2">
                 <!-- <p class="header-app-download-title">GET OUR MOBILE APP</p> -->
@@ -110,7 +109,7 @@
             </div>
             <div class="col-md-6">
               <img
-                src="assets/images/home.gif"
+              src="{{ url_for('static', filename='assets/images/home.gif') }}"
                 alt="app"
                 class="img-fluid"
               />
@@ -162,7 +161,7 @@
         <div class="row">
           <div class="col-md-6 mb-5 mb-md-0">
             <img
-              src="assets/images/stressed.gif"
+            src="{{ url_for('static', filename='assets/images/stressed.gif') }}"
               alt="special offers"
               class="img-fluid"
               width="492px"
@@ -236,7 +235,7 @@
             </p>
             <div class="media foi-review-user">
               <img
-                src="assets/images/avatar/avatar_11.jpg"
+              src="{{ url_for('static', filename='assets/images/avatar/avatar_11.jpg') }}"
                 alt="user"
                 class="avatar"
               />
@@ -260,7 +259,7 @@
             </p>
             <div class="media foi-review-user">
               <img
-                src="assets/images/avatar/avatar_12.jpg"
+              src="{{ url_for('static', filename='assets/images/avatar/avatar_12.jpg') }}"
                 alt="user"
                 class="avatar"
               />
@@ -284,7 +283,7 @@
             </p>
             <div class="media foi-review-user">
               <img
-                src="assets/images/avatar/avatar_13.jpg"
+              src="{{ url_for('static', filename='assets/images/avatar/avatar_13.jpg') }}"
                 alt="user"
                 class="avatar"
               />
@@ -376,16 +375,16 @@
             
             <nav class="social-menu">
               <a href="#!"
-                ><img src="assets/images/facebook.svg" alt="facebook"
+                ><img src="{{ url_for('static', filename='assets/images/facebook.svg') }}" alt="facebook"
               /></a>
               <a href="#!"
-                ><img src="assets/images/instagram.svg" alt="instagram"
+                ><img src="{{ url_for('static', filename='assets/images/instagram.svg') }}"  alt="instagram"
               /></a>
               <a href="#!"
-                ><img src="assets/images/twitter.svg" alt="twitter"
+                ><img src="{{ url_for('static', filename='assets/images/twitter.svg') }}"alt="twitter"
               /></a>
               <a href="#!"
-                ><img src="assets/images/youtube.svg" alt="youtube"
+                ><img src="{{ url_for('static', filename='assets/images/youtube.svg') }}" alt="youtube"
               /></a>
             </nav>
           </div>

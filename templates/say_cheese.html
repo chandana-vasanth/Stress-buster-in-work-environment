@@ -4,17 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Say Cheese!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .great-smile {
+            color: #6206a8; 
+        }
+
+        .small-smile {
+            color: #6206a8; 
+        }
+
+        .no-smile {
+            color: #6206a8; 
+        }
+    </style>
 </head>
 <body>
     <h1>Say Cheese!</h1>
     <img src="data:image/jpeg;base64,{{ img_data }}" alt="Webcam Feed">
     
     {% if smile_status == "big_smile" %}
-        <p>Great smile! Keep it up!</p>
+        <p class="great-smile">Great smile! Keep it up!</p>
     {% elif smile_status == "small_smile" %}
-        <p>Try smiling a bit more for a better stress relief!</p>
+        <p class="small-smile">Try smiling a bit more for a better stress relief!</p>
     {% elif smile_status == "no_smile" %}
-        <p>Don't forget to smile! It's good for stress relief.</p>
+        <p class="no-smile">Don't forget to smile! It's good for stress relief.</p>
     {% endif %}
 </body>
 </html>

@@ -36,7 +36,9 @@ def send_email(subject, body, to_email):
 # Route to display the list of mental health assistants
 @app.route('/')
 def index():
-    return render_template('appointment.html', assistants=assistants)
+    return render_template('appointment.html',assistants=assistants )
+    #return render_template('appointments.html'),, 200, {'Content-Type': 'text/html; charset=utf-8'}
+
 
 # Route to handle the appointment form submission
 @app.route('/process-form', methods=['POST'])

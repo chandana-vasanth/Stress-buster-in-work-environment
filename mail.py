@@ -31,7 +31,7 @@ body = """Greetings!
 
 🚨 Stress levels detected: HIGH! 🚨
 
-Alert! Stress vibes detected around [Employee's Name]—our superhero in distress! 🚨🦸‍♂ Time for a CareEttan intervention!
+Alert! Stress vibes detected around one of your employee —our superhero in distress! 🚨🦸‍♂ Time for a CareEttan intervention!
 
 As the Care Ambassador, it's my sworn duty to make sure your superhero hangout stays as chill as an ice cream cone in Antarctica! 🍦❄
 
@@ -44,7 +44,7 @@ Sending cyber-hugs your way,
 CareEttan
 Your Mood Mentor Companion 🌈
 """
-recipient_email = "pkd20bit342@gecskp.ac.in"
+recipient_email = "angelrosejoy19@gmail.com"
 
 send_email(subject, body, recipient_email)
 print("Sucessfully Sent")

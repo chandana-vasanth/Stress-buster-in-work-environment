@@ -72,9 +72,9 @@ def index():
         else:
             current_question = None
 
-        return render_template('index.html', question=current_question, response=response)
+        return render_template('chat.html', question=current_question, response=response)
 
-    return render_template('index.html', question=current_question)
+    return render_template('chat.html', question=current_question)
 
 if __name__ == '__main__':
     app.run(debug=True)

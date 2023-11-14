@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: 'Lato', sans-serif;
-            background-color: #f5f5f5; /* Add a background color for better readability */
+            background-color: #f5f5f5;
             margin: 0;
             padding: 20px;
         }
@@ -18,13 +18,24 @@
         h1 {
             text-align: center;
             color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #6206a8; /* Match the color of the button */
+            margin: 15px auto;
         }
 
         ul {
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around; /* Adjust as needed */
+            justify-content: space-around;
             padding: 0;
         }
 
@@ -34,12 +45,12 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            width: calc(25% - 20px); /* Adjust as needed */
+            width: calc(25% - 20px);
         }
 
         img {
             width: 100%;
-            height: 350px; /* Adjust the height as needed */
+            height: 350px;
             object-fit: cover;
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
@@ -54,8 +65,8 @@
 
         .btn-2 {
             display: block;
-            background: rgb(96,9,240);
-            background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+            background: rgba(98, 6, 168, 255);
+            background: linear-gradient(0deg, rgba(98, 6, 168, 255) 0%, rgba(98, 6, 168, 255) 100%);
             border: none;
             color: #fff;
             padding: 10px;
@@ -73,8 +84,7 @@
 <body>
     <br>
     <h1>Sit back, grab some popcorn, and let the laughter roll with these hilarious movies!</h1>
-    <br><br>    <br><br>    <br><br>
-
+    <br><br><br><br><br><br>
 
     <ul>
         {% for movie in movies %}
