@@ -167,7 +167,7 @@ def chat():
 
 @app.route('/spinner')
 def spinner():
-    return render_template('movie.html')
+    return render_template('spinner.html')
 
 @app.route('/meditate')
 def meditate():
