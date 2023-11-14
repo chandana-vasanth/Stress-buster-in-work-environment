@@ -44,7 +44,7 @@ Sending cyber-hugs your way,
 CareEttan
 Your Mood Mentor Companion 🌈
 """
-recipient_email = "pkd20bit342@gecskp.ac.in"
+recipient_email = "dmpduyoof@gmail.com"
 
 send_email(subject, body, recipient_email)
 print("Sucessfully Sent")
